@@ -1,0 +1,16 @@
+import numpy as np
+arr1=np.arange(16).reshape(4,4)
+print(arr1)
+print("after swapping of first and last, second and third columns.")
+print(arr1[:,::-1])
+
+output:
+[[ 0  1  2  3]
+ [ 4  5  6  7]
+ [ 8  9 10 11]
+ [12 13 14 15]]
+after swapping of first and last, second and third columns.
+[[ 3  2  1  0]
+ [ 7  6  5  4]
+ [11 10  9  8]
+ [15 14 13 12]]
