@@ -1,0 +1,197 @@
+Exp no 1 : NUMPY ARRAY                                                         
+                                       
+1)write a numpy program using mathods-info,add,array,all,greater,greater equal,less and less equal,allclose,zeros,ones,linespace,tolist
+
+Exp no 1.1:
+
+a)To get help on the add function.
+
+AIM:
+To get help on the add function
+DESCRIPTION:
+ numpy.add() function is used when we want to compute the addition of two array. It add arguments element-wise. If shape of two arrays are not t same, that is arr1.shape != arr2.shape, they must be broadcastable to a common shape (which may be the shape of one or the other).
+Syntax : numpy.add(arr1, arr2[,out])
+PROGRAM:
+import numpy as np
+arr=np.array([1,2,3])
+print(arr)
+arr1=np.arrayt((1.2,3.4,5.6))
+print(arr1)
+print(np.add(arr,arr1))
+OUTPUT:
+[1    2     3]
+[1.2 3.4 5.6]
+[2.2 5.4 8.6]
+
+
+
+Exp no 1.2:
+
+b)To test whether none of the elements of a given array is zero
+
+AIM:
+To test whether none of the elements of a given array is zero
+
+DESCRIPTION:
+. In numpy, we can check that whether none of the elements of given array is zero or not with the help of numpy.all() function. In this function pass an array as parameter. If any of one element of the passed array is zero then it returns False otherwise it returns True boolean value.
+Syntax: numpy.all()
+
+PROGRAM:
+import numpy as np
+a=np.array([0,1,2,3,4])
+print(np.all(a))
+a1=np.array([1.2,2.5,3,4.6])
+print(np.all(a1))
+
+OUTPUT:
+False
+True
+
+
+Exp no 1.3:
+
+c) to create an element-wise comparison (greater, greater_equal, less and less_equal) of two given arrays.
+
+AIM:
+to create an element-wise comparison (greater, greater_equal, less and less_equal) of two given arrays.
+
+DESCRIPTION:
+Grater_equal:
+The numpy.greater_equal() checks whether x1 >= x2 or not.
+Syntax :
+numpy.greater_equal(x1, x2[, out])
+greater: 
+The numpy.greater() checks whether x1 is greater than x2 or not. 
+Syntax :
+ numpy.greater(x1, x2[, out]). 
+Less:
+The less() function is used to return the truth value of (x1 < x2) element-wise. (which may be the shape of one or the other). 
+Syntax:
+ numpy.less(x1, x2[, out])
+less_equal:
+The Python Numpy less_equal function checks whether each element in a given array is less than or equal to a specified number or not. If True, boolean True returned otherwise, False.
+ numpy.less_eual(x1, x2[, out])
+
+PROGRAM:
+import numpy as np
+a=np.array([0,1,2,3,4])
+print(np.all(a))
+a1=np.array([1,2,1,0,4])
+print(np.all(a1))
+print(np.greater(a,a1))
+print(np.greater_equal(a,a1))
+print(np.less(a,a1))
+print(np.less_equal(a,a1))
+
+OUTPUT:
+False
+False
+[False False  True  True False]
+[False False  True  True  True]
+[ True  True False False False]
+[ True  True False False  True]
+
+
+
+Exp no 1.4:
+d)  to create  one-dimensional array of 10 zeros,10 ones, 10 fives, single ,two and three digit numbers.
+
+
+AIM:
+
+to create  one-dimensional array of 10 zeros,10 ones, 10 fives, single ,two and three digit numbers.
+
+
+DESCRIPTION:
+
+--The numpy.zeros() function returns a new array of given shape and type, with zeros.
+
+Syntax:
+numpy.zeros(shape, dtype = None, order = 'C
+mpy.ones() function returns a new array of given shape and data type, where the element’s value is set to 1. This function is very similar to numpy zeros() function.
+numpy.ones(shape, dtype = None, order = 'C')
+
+
+PROGRAM:
+import numpy as np
+array=np.zeros(10,order="c") 
+print("An array of 10 zeros:")
+print(array)
+array=np.ones(10,order="f")
+print("An array of 10 ones:")
+print(array)
+array=np.ones(10)*5
+print("An array of 10 fives:")
+print(array)
+arr=np.array([1,7,10,23,234,345])
+print(arr)
+print("dimension of tn array is:")
+print(np.ndim(arr))
+
+OUTPUT:
+An array of 10 zeros:
+[0. 0. 0. 0. 0. 0. 0. 0. 0. 0.]
+An array of 10 ones:
+[1. 1. 1. 1. 1. 1. 1. 1. 1. 1.]
+An array of 10 fives:
+[5. 5. 5. 5. 5. 5. 5. 5. 5. 5.]
+[  1   7  10  23 234 345]
+dimension of tn array is:
+1
+
+
+
+Exp no 1.5:
+e) to create a vector of length 10 with values evenly distributed between 5 and 50.
+
+AIM:
+
+ to create a vector of length 10 with values evenly distributed between 5 and 50.
+
+
+DESCRIPTION:
+
+linspace is an in-built function in Python's NumPy library. It is used to create an evenly spaced sequence in a specified interval.
+
+Syntax:
+numpy.linspace(start, stop, num, endpoint, retstep, dtype)  
+
+PROGRAM:
+
+import numpy as np
+vector= np.linspace(5, 50, 10)
+print("Length 10 with values evenly distributed between 5 and 50:")
+print(vector)
+
+OUTPUT:
+
+Length 10 with values evenly distributed between 5 and 50:
+[ 5. 10. 15. 20. 25. 30. 35. 40. 45. 50.]
+
+
+
+Exp no 1.6:
+f)  to convert a given list into an array, then again convert it into a list. Check initial list and final list are equal or not.  
+AIM:
+
+ to convert a given list into an array, then again convert it into a list. Check initial list and final list are equal or not.  
+
+DESCRIPTION:
+
+We can use numpy ndarray tolist() function to convert the array to a list. If the array is multi-dimensional, a nested list is returned.
+ Use tolist() method to convert the array to list.
+How do I convert a list to a Numpy array?
+To convert a Python list to a NumPy array, use either of the following two methods:
+The np. array() function that takes an iterable and returns a NumPy array creating a new data structure in memory.
+The np. asarray() function that takes an iterable as argument and converts it to the array. The difference to np.
+
+PROGRAM:
+import numpy as np
+array1 = [[1.2, 2], [3.4, 4]]
+a= np.array(array1)
+array2 = a.tolist()
+print(array1 == array2)
+
+OUTPUT:
+True
+
