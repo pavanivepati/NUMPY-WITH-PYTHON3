@@ -1,0 +1,208 @@
+Exp no 9:NUMPY SEARCHINGAND SORTING 
+             
+9. Write a NumPy program using Searching or Sorting – sort, lexsort, argsort, sort_complex,
+Partition
+
+Exp no 9.1:
+9)a)To create a structured array from given student name, height, class and their data types.
+Now sort the array on height. 
+
+AIM: 
+Numpy  program to create a structured array from given student name, height, class and their data types ,now sort the array on height.
+
+DESCRIPTION:
+
+array:
+array(data type, value list) function is used to create an array with data type and value list specified in its arguments. Array creation using numpy methods : NumPy offers several functions to create arrays with initial placeholder content. These minimize the necessity of growing arrays, an expensive operation.
+Syntax:
+np.array(data type, value list)
+Sort:
+Sorting means putting elements in an ordered sequence. Ordered sequence is any sequence that has an order corresponding to elements, like numeric or alphabetical, ascending or descending. The NumPy ndarray object has a function called sort() , that will sort a specified array.
+Syntax:
+numpy.sort(array,order=”None”)
+
+PROGRAM:
+
+import numpy as np
+dt=[("name","S15"),("class",int),("height",float)]
+st=[("soni",4,56.4),("jahnavi",6,45.7),("pavani",7,44.7),("sanjana",8,46.8)]
+d=np.array(st,dtype=dt)
+print("original array:")
+print(d)
+print("sorted array:")
+print(np.sort(d,order="height"))
+
+OUTPUT:
+
+original array:
+[(b'soni', 4, 56.4) (b'jahnavi', 6, 45.7) (b'pavani', 7, 44.7)
+ (b'sanjana', 8, 46.8)]
+sorted array:
+[(b'pavani', 7, 44.7) (b'jahnavi', 6, 45.7) (b'sanjana', 8, 46.8)
+ (b'soni', 4, 56.4)]
+
+
+
+
+
+
+Exp no 9.2:
+9)b) To create a structured array from given student name, height, class and their data types. Now sort by class, then height if class are equal.
+
+AIM:
+Numpy program to create a structured array from given student name, height, class and their data types. Now sort by class, then height if class are equal.
+
+DESCRIPTION:
+Sort: Sorting means putting elements in an ordered sequence. Ordered sequence is any sequence that has an order corresponding to elements, like numeric or alphabetical, ascending or descending. The NumPy ndarray object has a function called sort() , that will sort a specified array.
+Syntax:  Numpy.sort(array,order=”None”)
+
+PROGRAM:
+Import numpy as np
+Dt=[(“name”,”S15”),(“class”,int),(“height”,float)]
+St=[(“soni”,4,56.4),(“jahnavi”,3,46.7),(“pavani”,5,44.7),(“sanjana”,3,44.8)]
+D=np.array(st,dtype=dt)
+Print(“original array:”)
+Print(d)
+Print(“sort by class, then height if class are equal:”)
+Print(np.sort(d,order=[“class”, “height”]))
+
+OUTPUT:
+Original array:
+[(b’soni’, 4, 56.4) (b’jahnavi’, 3, 46.7) (b’pavani’, 5, 44.7)
+ (b’sanjana’, 3, 44.8)]
+Sort by class, then height if class are equal:
+[(b’sanjana’, 3, 44.8) (b’jahnavi’, 3, 46.7) (b’soni’, 4, 56.4)
+ (b’pavani’, 5, 44.7)]
+ 
+ 
+Exp no 9.3:
+9)c) To sort the student id with increasing height of the students from given students id and
+height. Print the integer indices that describes the sort order by multiple columns and the
+sorted data.       
+         
+AIM:
+Numpy program to sort the student id with increasing height of the students from given students id and height. Print the integer indices that describes the sort order by multiple columns and the sorted data.         
+
+DESCRIPTION:
+
+np.lexsort((b, a))
+(i) Perform an indirect sort using a sequence of keys
+(ii) Sort by a, then by b
+(iii) Return type ndarray of ints Array of indices that sort the keys along the specified axis
+(iv) Occupies space as a new array of sorted indices pair wise is returned.
+Syntax:
+numpy.lexsort(keys, axis=- 1)
+
+
+PROGRAM:
+
+import numpy as np
+s_id=np.array([1501,2670,1245,2067,1098,2034])
+s_he=np.array([45.3,30.4,46.5,38.4,60.6,24.5])
+indices=np.lexsort((s_id,s_he))
+print("Sorted indices:")
+print(indices)
+print("Sorted data:")
+for n in indices:
+   print(s_id[n], s_he[n])
+
+
+OUTPUT:
+
+Sorted indices:
+[5 1 3 0 2 4]
+Sorted data:
+2034 24.5
+2670 30.4 
+2067 38.4
+1501 45.3
+1245 46.5
+1098 60.6
+
+
+
+
+
+
+
+Exp no 9.4:
+9)d)To get the indices of the sorted elements of a given array.
+
+AIM:
+Numpy program to get the indices of the sorted elements of a given array.
+
+DESCRIPTION:
+Argsort: 
+numpy.argsort() function is used to perform an indirect sort along the given axis using the algorithm specified by the kind keyword. It returns an array of indices of the same shape as arr that that would sort the array.
+Syntax :  
+numpy.argsort(arr, axis=-1, kind=’quicksort’, order=None) 
+Return : 
+[index_array, ndarray] Array of indices that sort arr along the specified axis.If arr is one-dimensional then arr[index_array] returns a sorted arr.
+
+PROGRAM:
+import numpy as np
+array=np.array([3212,9234,4321,6742,1023,5642])
+print(array)
+i=np.argsort(array)
+print("The indices of the sorted elements of a given array:",i)
+
+OUTPUT:
+[3212 9234 4321 6742 1023 5642]
+The indices of the sorted elements of a given array: [4 0 2 5 3 1]
+
+
+Exp no 9.5:
+9)e)To sort a given complex array using the real part first, then the imaginary part.
+
+AIM:
+Numpy program to sort a given complex array using the real part first, then the imaginary part.
+
+DESCRIPTION:
+Sort_complex:
+numpy.sort_complex() function is used to sort a complex array.It sorts the array by using the real part first, then the imaginary part.
+Syntax : 
+numpy.sort_complex(arr)
+Parameters :
+arr : [array_like] Input array.
+Return : 
+[complex ndarray] A sorted complex array.
+
+PROGRAM:
+import numpy as np
+complexnumber=[1+3j,2-4j,3+5j,6-1j,7+2j]
+print("Origial array is : ",complexnumber)
+print("Sorted complex array using the real part first, then the imaginary part:",np.sort_complex(complexnumber))
+
+
+OUTPUT:
+Origial array is :  [(1+3j), (2-4j), (3+5j), (6-1j), (7+2j)]
+Sorted complex array using the real part first, then the imaginary part:
+ [1.+3.j 2.-4.j 3.+5.j 6.-1.j 7.+2.j]
+ 
+ 
+Exp no 9.6:
+9)f)To partition a given array in a specified position and move all the smaller elements values to  the left of the partition, and the remaining values to the right, in arbitrary order.
+
+AIM:
+To partition a given array in a specified position and move all the smaller elements values to  the left of the partition, and the remaining values to the right, in arbitrary order.
+
+DESCRIPTION:
+Partition: numpy.partition() function is used to create a partitioned copy of input array with its elements rearranged in such a way that the value of the element in k-th position is in the position it would be in a sorted array. All elements smaller than the k-th element are moved before this element and all equal or greater are moved behind it.  Syntax :  numpy.partition(arr, kth, axis=-1, kind=’introselect’, order=None)
+Parameters :
+arr : [array_like] Input array.
+kth : [int or sequence of ints ] Element index to partition by.
+axis : [int or None] Axis along which to sort. If None, the array is flattened before sorting. The default is -1, which sorts along the last axis.
+kind : Selection algorithm. Default is ‘introselect’.
+order : [str or list of str] When arr is an array with fields defined, this argument specifies which fields to compare first, second, etc.
+
+PROGRAM:
+import numpy as np
+array=np.array([10,12,-34,23,14,-74])
+print(array)
+print("After partitioning on 2nd position:",np.partition(array,2))
+print("After partitioning on 5nd position:",np.partition(array,5))
+
+OUTPUT:
+[ 10  12 -34  23  14 -74]
+After partitioning on 2nd position: [-74 -34  10  23  14  12]
+After partitioning on 5nd position: [-74 -34  10  12  14  23]
