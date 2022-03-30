@@ -1,0 +1,184 @@
+Exp no 7:     NUMPY RANDOM
+
+7)Write a NumPy program using NumPy Random - random.normal, random.randint, random.random, random.shuffle, random.permutation.
+
+Exp no 7.1:
+7(a)To generate an array of 15 random numbers from a standard normal distribution.
+
+AIM:
+Numpy program to generate an array of 15 random numbers from a standard normal distribution.
+
+DESCRIPTION:
+random. normal() function returns a list of random samples drawn from a normal distribution. The distribution is dependent on the values of the keyword arguments loc , scale , and size . 
+The number of samples in this returned list will be equal to the value of the size argument.
+Furthermore, each time you run this function, the results will be slightly different each time, due to the randomness, but will follow the same distribution and general shape. To ensure that the result is more accurate, it is good to choose a large size value, which usually is around 10000.
+SYNTAX:
+random.normal(loc=0.0, scale=1.0, size=None)
+
+PROGRAM:
+import numpy as np
+print(" 15 random numbers from a standard normal distribution:")
+a1=np.random.normal(1,20,15)
+print(a1)
+
+OUTPUT:
+15 random numbers from a standard normal distribution:
+[ 14.16158917  -1.30292205  40.84939382 -19.36075052  -7.95350501
+  34.30208349  -9.46963872  23.26078811  10.99259556   1.67170996
+  31.1162094    3.44543767  18.92342054 -40.08460348  -2.94811656]
+  
+  
+Exp no 7.2:
+7(b) To create a vector of length 5 filled with arbitrary integers from 0 to 10.
+
+AIM:
+Numpy  proram  to create a vector of length 5 filled with arbitrary integers from 0 to 10.
+
+DESCRIPTION:
+random. randint() is one of the function for doing random sampling in numpy. It returns an array of specified shape and fills it with random integers from low (inclusive) to high (exclusive), i.e. in the interval [low, high).
+Parameters :
+low : [int] Lowest (signed) integer to be drawn from the distribution.But, it works as a highest integer in the sample if high=None.
+high : [int, optional] Largest (signed) integer to be drawn from the distribution.
+size : [int or tuple of ints, optional] Output shape. If the given shape is, 
+e.g., (m, n, k), then m * n * k samples are drawn. Default is None, in which case a single value is returned.
+dtype : [optional] Desired output data-type.
+SYNTAX:
+numpy.random.randint(low, high=None, size=None, dtype=”l”)
+
+PROGRAM:
+import numpy as np
+array1=np.random.randint(0,11,5)
+print("vector of length 5 filled with arbitrary integers from 0 to 10:")
+print(array1)
+
+OUTPUT:
+vector of length 5 filled with arbitrary integers from 0 to 10:
+[3   3  3  8  6]
+
+Exp no 7.3:
+7(c)To multiply the values of two given vectors.
+
+AIM:
+Numpy  program to  multiply the values of two given vectors.
+
+DESCRIPTION:
+By using arithmetic operator “*” ,we can get the multiplication of two vectors.
+
+PROGRAM:
+import numpy as np
+array1=np.arange(1,13).reshape(3,4)
+print(array1)
+array2=np.arange(14,26).reshape(3,4)
+print(array2)
+mul=array1*array2
+print("multiplication given vectors:")
+print(mul)
+
+OUTPUT:
+[[ 1  2  3  4]
+ [ 5  6  7  8]
+ [ 9 10 11 12]]
+[[14 15 16 17]
+ [18 19 20 21]
+ [22 23 24 25]]
+multiplication given vectors:
+[[ 14  30  48  68]
+ [ 90 114 140 168]
+ [198 230 264 300]]
+ 
+Exp no 7.4:
+7(d) To create a 3x3x3 array filled with arbitrary values.
+
+AIM:
+Numpy  program to create a 3x3x3 array filled with arbitrary values.
+
+DESCRIPTION:
+numpy.random.random() is one of the function for doing random sampling in numpy. It returns an array of specified shape and fills it with random floats in the half-open interval [0.0, 1.0).
+Syntax : 
+numpy.random.random(size=None)
+
+PROGRAM:
+import numpy as np
+array1=np.random.random((3,3,3))
+print(array1)
+
+OUTPUT:
+[[[0.6112971  0.69417401 0.55874219]
+  [0.70648274 0.81154335 0.53199181]
+  [0.48822023 0.64715877 0.40366438]]
+
+ [[0.69506433 0.31253203 0.84316655]
+  [0.93105582 0.95587621 0.62006121]
+  [0.05677763 0.33994498 0.81433584]]
+
+ [[0.61276831 0.91042303 0.62100779]
+  [0.09343285 0.81720361 0.94559633]
+  [0.96145128 0.89807835 0.4567829 ]]]
+  
+
+Exp no 7.5:
+7(e) To create a random vector of size 10 and sort it.
+
+AIM:
+Numpy  program  to create a random vector of size 10 and sort it.
+
+DESCRIPTION:
+numpy.random.randint() is one of the function for doing random sampling in numpy. It returns an array of specified shape and fills it with random integers from low (inclusive) to high (exclusive), i.e. in the interval [low, high). It returns array of random integers in the interval [low, high) or a single such random int if size not provided.
+Syntax : 
+numpy.random.randint(low, high=None, size=None, dtype=’l’)
+sort( ):
+This function returns a sorted copy of an array.
+Syntax:
+numpy.sort() :
+
+
+PROGRAM:
+import numpy as np
+vector1=np.random.randint(10,25,10)
+print(vector1)
+vector1.sort()
+print("sorted array with size 10")
+print(vector1)
+
+OUTPUT:
+[21 23 23 12 11 18 23 19 18 12]
+sorted array with size 10
+[11 12 12 18 18 19 21 23 23 23]
+
+Exp no 7.6:
+7(f) To shuffle numbers between 0 and 10 (inclusive).
+
+AIM:
+Numpy program to shuffle numbers between 0 and 10 (inclusive).
+
+DESCRIPTION:
+Shuffle( ):
+With the help of numpy.random.shuffle() method, we can get the random positioning of different integer values in the numpy array or we can say that all the values in an array will be shuffled randomly. Returns  the reshuffled numpy array. Numpy. random. permutation() function gives us the random samples of a sequence of permutation and returns sequence by using this method.
+Syntax :
+numpy.random.shuffle(x)
+Permutation( ):
+With the help of numpy.random.permutation() method, we can get the random samples of sequence of permutation and return sequence by using this method. Returns the random sequence of permuted values.(or)
+This function only shuffles the array along the first axis of a multi-dimensional array. The order of sub-arrays is changed but their contents remains the same. New code should use the shuffle method of a default_rng() instance instead; see random-quick-start. The array or list to be shuffled.
+Syntax :
+ numpy.random.permutation(x)
+
+
+PROGRAM:
+import numpy as np
+vector=np.random.randint(10,25,10)
+print(vector)
+np.random.shuffle(vector)
+print("Using shuffle:")
+print(vector)
+np.random.permutation(vector)
+print("Using permutation:")
+print(vector)
+
+OUTPUT:
+
+[16 10 18 19 20 13 18 12 12 11]
+Using shuffle:
+[13 12 10 18 12 11 20 19 16 18]
+Using permutation:
+[13 12 10 18 12 11 20 19 16 18]
+
