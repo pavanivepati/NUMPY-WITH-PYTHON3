@@ -1,0 +1,179 @@
+Exp no 10:NUMPY MATHEMATICS  
+
+10. Write a NumPy program using Mathematics – logaddexp, logaddexp2, absolute, power, round, rint, floor, ceil, trunc
+
+Exp no 10.1:
+a)To compute logarithm of the sum of exponentiations of the inputs, sum of exponentiations of the inputs in base-2.
+
+AIM:
+To compute logarithm of the sum of exponentiations of the inputs, sum of exponentiations of the inputs in base-2.
+
+DESCRIPTION:
+numpy.logaddexp2() function is used to calculate Logarithm of the sum of exponentiations of the inputs in base-2.
+This function is useful in machine learning when the calculated probabilities of events may be so small as to exceed the range of normal floating point numbers. In such cases, the base-2 logarithm of the calculated probability can be used instead. This function allows adding probabilities stored in such a fashion. It Calculates log2(2**x1 + 2**x2).
+Syntax: np.logaddexp()
+
+PROGRAM:
+import numpy as np
+a=np.log(2e-23)
+b=np.log(3e-25)
+print("logarithm of the sum of exponentiations ")
+output=np.logaddexp(a,b)
+print(output)
+
+OUTPUT:
+logarithm of the sum of exponentiations 
+-52.251421345809355
+
+
+Exp no 10.2:
+b) To calculate the element-wise absolute value of array 
+
+AIM:
+To calculate the element-wise absolute value of array
+
+DESCRIPTION:The numpy absolute value function simply operates on every element of the 2D array, element wise. This mathematical function helps to calculate the absolute value of each element in the array. The output is a new Numpy array that has the same shape. The values of the new Numpy are the absolute values of the values of the input array.
+ 
+Syntax: np.absolute()
+
+PROGRAM:
+import numpy as np
+arr=(5.0,10,-111.2)
+print("original output:")
+print(arr)
+print("Absolute value:")
+arr1=np.absolute(arr)
+print(arr1)
+
+OUTPUT:
+original output:
+(5.0, 10, -111.2)
+Absolute value:
+[  5.   10.  111.2]
+
+Exp no 10.3:
+c) To get the powers of an array values element-wise.
+
+AIM:
+To get the powers of an array values element-wise.
+
+DESCRIPTION:
+The numpy. power() is a mathematical function in Python that is used to get one array that contains elements of the first array raised to the power element of the second array .
+ 
+
+PROGRAM:
+import numpy as np
+arr=np.arange(6)
+print("oriiginal output:")
+print(arr)
+print("First array elements raised to powers from second array.")
+arr1=np.power(arr,3)
+print(arr1)
+
+OUTPUT:
+oriiginal output:
+[0 1 2 3 4 5]
+First array elements raised to powers from second array.
+[  0   1   8  27  64 125]
+
+Exp no 10.4:
+d) To round array elements to the given number of decimals, round elements of the array to the nearest integer.
+
+AIM:
+To round array elements to the given number of decimals, round elements of the array to the nearest integer.
+
+DESCRIPTION:
+In NumPy, we can round array elements to the given number of decimals with the help of round().
+The first parameter will be an array and the second parameter will be the number of decimals for which needed rounded. If no parameter will be pass as the second parameter then by default it takes 0. It will return round array elements to the given number of decimals.
+Syntax:
+        np.round(a, decimals=0, out=None)
+        
+PROGRAM:
+import numpy as np
+arr=np.round([0.28,0.5,0.001],decimals=1)
+print(arr)
+arr1=np.round([1.5,2.5,3.5])
+print(arr1)
+arr2=np.round([-0.11,0.5,4.5])
+print(arr2)
+
+OUTPUT:
+[0.3 0.5 0. ]
+[2. 2. 4.]
+[-0.  0.  4.]
+
+
+Exp no 10.5:
+e) To get floor, ceiling and truncated values of the elements of an array. 
+
+AIM:
+To get floor, ceiling and truncated values of the elements of an array.
+
+DESCRIPTION:
+floor():
+floor.is a mathematical function that returns the floor of the elements of the array. ... The numpy floor() function takes two main parameters and returns the floor value of each array element with a float data type. The floor of the scalar x is the largest integer i, such that i <= x.
+Syntax:
+            np.floor()
+ 
+Ceil():
+The np. ceil() function in Python is used to find the ceil of the elements of the array. The numpy ceil() method accepts two arguments which are arr and out and returns the rounded value of each element.
+Syntax: 
+   np.ceil()
+np.trunc():
+The numpy. trunc() is a mathematical function that returns the truncated value of the elements of array. ... This simply means that, the fractional part of the signed number x is discarded by this function.
+Syntax: 
+   np.trunc():
+
+PROGRAM:
+import numpy as np
+arr=np.array([-2.3,-1.1,-1.0,0.0,1.3,2.3])
+print("original output:")
+print(arr)
+print("floor values of the elements of an array")
+print(np.floor(arr))
+print("ceiling values of the elements of an array")
+print(np.ceil(arr))
+print("truncated values of the elements of an array")
+print(np.trunc(arr))
+
+OUTPUT:
+original output:
+[-2.3 -1.1 -1.   0.   1.3  2.3]
+floor values of the elements of an array
+[-3. -2. -1.  0.  1.  2.]
+ceiling values of the elements of an array
+[-2. -1. -1.  0.  2.  3.]
+truncated values of the elements of an array
+[-2. -1. -1.  0.  1.  2.]
+
+
+
+Exp no 10.6:
+f. To determine the positive square-root of an array
+
+AIM:    
+To determine the positive square-root of an array
+
+DESCRIPTION:
+sqrt() in Python. numpy. sqrt(array[, out]) function is used to determine the positive square-root of an array, element-wise.
+To find the square root of a list of numbers, you can use numpy.sqrt() function.sqrt() functions accepts a numpy array (or list), computes the square root of items in the list and returns a numpy array with the result.
+Syntax:  np.sqrt()
+
+PROGRAM:
+import numpy as np
+arr=np.array([1,4,9,16,256])
+arr1=np.array([-9,0,-16])
+print("Original output:")
+print(arr)
+print(arr1)
+print("The positive square-root of an array:")
+print(np.sqrt(arr))
+print(np.sqrt(arr1))
+
+OUTPUT:
+Original output:
+[  1   4   9  16 256]
+[ -9   0 -16]
+The positive square-root of an array:
+[ 1.  2.  3.  4. 16.]
+[nan  0. nan]
