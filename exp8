@@ -1,0 +1,197 @@
+Exp no 8:			NUMPY LINEAR ALGEBRA
+
+			
+8)Write a NumPy program using Linear Algebra – inner, outer, cross, linalg.det, linalg.norm, inv, linalg.eig
+
+Exp no 8.1:
+8)a) To compute the inner, outer, cross product of two given vectors.
+
+AIM:
+Numpy program to compute the inner, outer, cross product of two given vectors
+
+DESCRIPTION:
+Inner :
+inner() This function returns the inner product of vectors for 1-D arrays. For higher dimensions, it returns the sum product over the last axes. Inner product of two arrays.np. inner is sometimes called a "vector product" between a higher and lower order tensor, particularly a tensor times a vector, and often leads to "tensor contraction". It includes matrix-vector multiplication.
+Syntax:
+numpy.inner(arr1, arr2)  (or) np.inner(a,b)=sum(a[:]*b[:])
+Outer :
+The Numpy outer() function is used to compute the outer products of two vectors.If we try to combine the two vectors of the array’s outer level, the numpy outer() function requires more than two levels of arguments that are passed into the function. It will be the array-like format, i.e., single or multi-parameter arguments. We can store the results in the out parameter.
+Syntax:
+numpy.outer(a, b, out = None)
+Cross :
+Return the cross product of two (arrays of) vectors. The cross product of a and b in is a vector perpendicular to both a and b. If a and b are arrays of vectors, the vectors are defined by the last axis of a and b by default, and these axes can have dimensions 2 or 3.
+Syntax :
+numpy.cross(a, b, axisa=- 1, axisb=- 1, axisc=- 1, axis=None)
+
+PROGRAM:
+import numpy as np
+vector1=np.array([10,20,30])
+vector2=np.array([10,21,32])
+print(vector1)
+print(vector2)
+print("inner product :")
+print(np.inner(vector1,vector2))
+print("outer product :")
+print(np.outer(vector1,vector2))
+print("cross product :")
+print(np.cross(vector1,vector2))
+
+OUTPUT:
+[10 20 30]
+[10 21 32]
+inner product :
+1480
+outer product :
+[[100 210 320]
+ [200 420 640]
+ [300 630 960]]
+cross product :
+[ 10 -20  10]
+
+Exp no 8.2:
+8)b)To compute the determinant of a given square array.
+
+AIM:
+ Numpy program to compute the determinant of a given square array.
+ 
+DESCRIPTION:
+Linalg.det :
+In NumPy, we can compute the determinant of the given square array with the help of numpy.linalg.det(). It will take the given square array as a parameter and return the determinant of that. 
+For a matrix [[a,b], [c,d]], the determinant is computed as ‘ad-bc’. The larger square matrices are considered to be a combination of 2x2 matrices.
+Syntax: 
+numpy.linalg.det(array)
+
+PROGRAM:
+import numpy as np
+vector=np.array([[13,12,10],[6,5,7],[1,2,3]])
+print(vector)
+print("determinent of vector:")
+print(np.linalg.det(vector))
+
+OUTPUT:
+[[13 12 10]
+ [ 6  5  7]
+ [ 1  2  3]]
+determinent of vector:
+-48.99999999999997
+
+
+Exp no 8.3:
+8)c) To find a matrix or vector norm.
+
+AIM:  Numpy program to find a matrix or vector norm.
+
+DESCRIPTION:
+To find a matrix or vector norm we use function numpy.linalg.norm() of Python library Numpy. This function returns one of the seven matrix norms or one of the infinite vector norms depending upon the value of its parameters. Syntax: numpy.linalg.norm(x, ord=None, axis=None)
+
+PROGRAM:
+import numpy as np
+vector=np.arange(8)
+print(vector)
+print("vector norm:")
+print(np.linalg.norm(vector))
+matrix=np.matrix("1,2,3;4,5,6;7,8,9")
+print(matrix)
+print("matrix norm:")
+print(np.linalg.norm(matrix))
+
+OUTPUT:
+[0 1 2 3 4 5 6 7]
+vector norm:
+11.832159566199232
+[[1 2 3]
+ [4 5 6]
+ [7 8 9]]
+matrix norm:
+16.881943016134134
+
+
+
+Exp no 8.4:
+8)d)To compute the inverse of a given matrix.
+
+AIM:
+Numpy program to compute the inverse of a given matrix.
+
+DESCRIPTION:
+Python provides a very easy method to calculate the inverse of a matrix. The function numpy.linalg.inv() which is available in the python NumPy module is used to compute the inverse of a matrix.
+We use numpy.linalg.inv() function to calculate the inverse of a matrix. The inverse of a matrix is such that if it is multiplied by the original matrix, it results in identity matrix.
+The inverse of a matrix is just a reciprocal of the matrix as we do in normal arithmetic for a single number which is used to solve the equations to find the value of unknown variables. The inverse of a matrix is that matrix which when multiplied with the original matrix will give as an identity matrix.
+Syntax :
+ numpy.linalg.inv(array)
+ 
+PROGRAM:
+import numpy as np
+mat=np.arange(5,9).reshape(2,2)
+print(mat)
+print("inverse of a given matrix :")
+print(np.linalg.inv(mat))
+
+OUTPUT:
+[[5 6]
+ [7 8]]
+inverse of a given matrix :
+[[-4.   3. ]
+ [ 3.5 -2.5]]
+ 
+ 
+ 
+Exp no 8.5:
+8)e) To compute Euclidean distance between 2 arrays. (Use linalg.norm or dot or sum, square, sqrt)
+
+AIM: Numpy program to compute Euclidean distance between 2 arrays. (Use linalg.norm or dot or sum, square, sqrt)
+
+DESCRIPTION:
+The euclidean distance is the shortest distance between two points. For example, the euclidean distance between (0,0,0) and (1,1,1) is 1.73205.
+The sum() and the square() methods are two commonly used methods of the NumPy module. They help in summing up all the numbers passed within it as a parameter. Again, the square() method is used to square up the number residing within it as its parameter.
+Syntaxes: numpy.sum(array),  numpy.square(array)
+
+PROGRAM:
+import numpy as np
+arr1=np.arange(5,9).reshape(2,2)
+print(arr1)
+arr2=np.arange(10,14).reshape(2,2)
+print(arr2)
+print("Euclidean distance between 2 arrays :")
+len=np.sum(np.square(arr2-arr1))
+print(np.sqrt(len))
+
+OUTPUT:
+[[5 6]
+ [7 8]]
+[[10 11]
+ [12 13]]
+Euclidean distance between 2 arrays :
+10.0
+
+
+
+Exp no 8.6:
+8)f)To compute the eigenvalues and right eigenvectors of a given square array.
+
+AIM:
+Numpy program to compute the eigenvalues and right eigenvectors of a given square array.
+
+DESCRIPTION:
+Linalg.eig :It will take a square array as a parameter and it will return two values first one is eigenvalues of the array and second is the right eigenvectors of a given square array.
+Syntax : numpy.linalg.eig(square_array)
+
+PROGRAM:
+import numpy as np
+arr=np.arange(5,14).reshape(3,3)
+print(arr)
+val,eig_ vec=np.linalg.eig(arr)
+print("Eigen values of given array :")
+print(val)
+print("Right eigen vectors of given array :",eig_vec)
+
+OUTPUT:
+[[ 5  6  7]
+ [ 8  9 10]
+ [11 12 13]]
+Eigen values of given array :
+[ 2.76509717e+01 -6.50971698e-01  1.12335729e-15]
+Right eigen vectors of given array :
+[[-0.37636677 -0.75529416  0.40824829]
+ [-0.55798202 -0.05094566 -0.81649658]
+ [-0.73959727  0.65340284  0.40824829]]
