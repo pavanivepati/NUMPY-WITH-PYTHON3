@@ -1,0 +1,248 @@
+Exp no 11:  NUMPY STATISTICS
+                                   
+                                   
+11. Write a NumPy program using Statistics – amax, amin, mean, median, average, histogram.
+
+Exp no 11.1:
+a)	To get the minimum and maximum value of a given array along the second axis.
+
+AIM:
+ Numpy program to get the minimum and maximum value of a given array along the second axis.
+
+DESCRIPTION:
+
+amax():
+amax. Return the maximum of an array or maximum along an axis. If this is a tuple of ints, the maximum is selected over multiple axes, instead of a single axis or all the axes as before.
+Syntax:
+    np.amax()
+
+amin():
+The numpy. amin() function returns minimum of an array or minimum along axis(if mentioned). axis : [int or tuples of int]axis along which we want the min value. Otherwise, it will consider arr to be flattened.
+Syntax:
+     np.amin()
+
+
+
+PROGRAM:
+import numpy as np
+arr=np.arange(9).reshape(3,3)
+arr1=([10,30,40,70,90,100])
+print("Original Output:")
+print(arr)
+print("The maximum value of a given array ")
+print(np.amax(arr))
+print(np.amax(arr1))
+print("The minimum value of a given array ")
+print(np.amin(arr))
+print(np.amin(arr1))
+
+OUTPUT:
+Original Output:
+[[0 1 2]
+ [3 4 5]
+ [6 7 8]]
+The maximum value of a given array 
+8
+100
+The minimum value of a given array 
+0
+10
+
+
+Exp no 11.2:
+b)	To compute the median of flattened given array.
+
+AIM:
+   To compute the median of flattened given array.
+
+DESCRIPTION:
+
+The median is the value separating the higher half from the lower half of a data sample (a population or a probability distribution). For a data set, it may be thought of as the "middle" value. For example, in the data set {1, 3, 3, 6, 7, 8, 9}, the median is 6, the fourth largest, and also the fifth smallest, number in the sample. For a continuous probability distribution, the median is the value such that a number is equally likely to fall above or below it.
+
+ 
+
+Syntax:
+         np.median()
+
+
+PROGRAM:
+
+import numpy as np
+arr=np.arange(9).reshape(3,3)
+arr1=np.arange(7)
+print("Original Output:")
+print(arr)
+print(arr1)
+print("The median of flattened given array:")
+print(np.median(arr))
+print(np.median(arr1))
+
+
+OUTPUT:
+
+Original Output:
+[[0 1 2]
+ [3 4 5]
+ [6 7 8]]
+[0 1 2 3 4 5 6]
+The median of flattened given array:
+4.0
+3.0
+
+
+
+
+Exp no 11.3:
+c. To compute the weighted average of a given array.
+
+AIM:
+  To compute the weighted average of a given array.
+  
+DESCRIPTION:
+The numpy. average() function computes the weighted average of elements in an array according to their respective weight given in another array. The function can have an axis parameter. If the axis is not specified, the array is flattened.
+Syntax: numpy.average(a, axis=None, weights=None, returned=False)
+
+
+PROGRAM:
+import numpy as np
+arr= np.arange(7)
+print("\nOriginal array:")
+print(arr)
+weights = np.arange(1, 8)
+r1 = np.average(arr, weights=weights)
+r2 = (arr*(weights/weights.sum())).sum()
+assert np.allclose(r1, r2)
+print("\nWeighted average of the said array:")
+print(r1)
+
+
+OUTPUT:
+Original array:
+[0 1 2 3 4 5 6]
+Weighted average of the said array:
+4.0
+
+Exp no 11.4:
+d)To compute the mean, standard deviation, and variance of a given array along the second axis
+
+AIM:
+Numpy program to compute the mean, standard deviation, and variance of a given array along the second axis.
+
+DESCRIPTION:
+
+numpy.mean()
+Arithmetic mean is the sum of elements along an axis divided by the number of elements. The numpy.mean() function returns the arithmetic mean of elements in the array. If the axis is mentioned, it is calculated along it.
+
+Standard Deviation:
+Standard deviation is the square root of the average of squared deviations from mean. The formula for standard deviation is as follows –
+
+std = sqrt(mean(abs(x - x.mean())**2))
+If the array is [1, 2, 3, 4], then its mean is 2.5. Hence the squared deviations are [2.25, 0.25, 0.25, 2.25] and the square root of its mean divided by 4, i.e., sqrt (5/4) is 1.1180339887498949. 
+
+Variance :
+Variance is the average of squared deviations, i.e., mean(abs(x - x.mean())**2). In other words, the standard deviation is the square root of variance.
+
+
+
+PROGRAM:
+import numpy as np
+arr= np.arange(1,9)
+print(arr)
+arr1 = np.mean(arr)
+arr2 = np.average(arr)
+assert np.allclose(arr1,arr2)
+print("\nMean: ",arr1)
+arr1 = np.std(arr)
+arr2 = np.sqrt(np.mean((arr - np.mean(arr)) ** 2 ))
+assert np.allclose(arr1,arr2)
+print("\nstd: ", 1)
+arr1= np.var(arr)
+arr2 =np.mean((arr- np.mean(arr))** 2 )
+assert np.allclose(arr1,arr2)
+print("\nvariance: ",arr1)
+
+OUTPUT:
+[1 2 3 4 5 6 7 8]
+Mean:  4.5
+std:  1
+variance:  5.25
+
+
+
+
+Exp no 11.5:
+e)To compute the histogram of nums against the bins.
+
+AIM:
+Numpy program to compute the histogram of nums against the bins.
+
+DESCRIPTION:
+
+NumPy.histogram() Method in Python :
+A histogram is the best way to visualize the frequency distribution of a dataset by splitting it into small equal-sized intervals called bins. The Numpy histogram function is similar to the hist() function of matplotlib library, the only difference is that the Numpy histogram gives the numerical representation of the dataset while the hist() gives graphical representation of the dataset.
+ 
+
+Creating Numpy Histogram
+
+Numpy has a built-in numpy.histogram() function which represents the frequency of data distribution in the graphical form. The rectangles having equal horizontal size corresponds to class interval called bin and variable height corresponding to the frequency.
+
+Syntax:
+numpy.histogram(data, bins=10, range=None, normed=None, weights=None, density=None) 
+
+
+
+
+PROGRAM:
+import numpy as np
+import matplotlib.pyplot as plt
+numbers = np.array([0.4, 0.8, 0.6, 0.8, 0.4,0.2,1.5])
+bins = np.array([0, 1, 2, 3])
+print("numbers: ",numbers)
+print("bins: ",bins)
+print("Result:", np.histogram(numbers, bins))
+plt.hist(numbers, bins=bins)
+plt.show()
+
+OUTPUT:
+numbers:  [0.4 0.8 0.6 0.8 0.4 0.2 1.5]
+bins:  [0 1 2 3]
+Result: (array([6, 1, 0]), array([0, 1, 2, 3])
+ 
+
+
+
+Exp no 11.6:
+f)To plot line graph from NumPy array.
+
+AIM:
+Numpy program to plot line graph from NumPy array.
+
+DESCRIPTION:
+
+Plot line graph from NumPy array:
+
+For plotting graphs in Python, we will use the Matplotlib library. Matplotlib is used along with NumPy data to plot any type of graph. From matplotlib we use the specific function i.e. pyplot(), which is used to plot two-dimensional data.
+
+Different functions used are explained below:
+
+np.arange(start, end): This function returns equally spaced values from the interval [start, end).
+plt.title(): It is used to give a title to the graph. Title is passed as the parameter to this function.
+plt.xlabel(): It sets the label name at X-axis. Name of X-axis is passed as argument to this function.
+plt.ylabel(): It sets the label name at Y-axis. Name of Y-axis is passed as argument to this function.
+plt.plot(): It plots the values of parameters passed to it together.
+plt.show(): It shows all the graph to the console. 
+
+
+
+PROGRAM:
+
+import numpy as np 
+import matplotlib.pyplot as plt
+x = np.arange(1, 11) 
+y = np.array([150,200,250,200,150,400,300,500,100,126])
+plt.title("Line graph") 
+plt.xlabel("X axis") 
+plt.ylabel("Y axis") 
+plt.plot(x, y, color ="blue") 
+plt.show()
+
