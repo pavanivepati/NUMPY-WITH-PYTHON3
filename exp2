@@ -1,0 +1,199 @@
+Exp no 2: NUMPY ARRAY
+
+2)Write a Numpy program using NumPy methods -max,min,argmax,argmin,repr,count, bincount,unique-
+
+Exp no 2.1:
+
+2)a) To extract all numbers from a given array which are less and greater than a specified number.
+
+AIM:
+To extract all numbers from a given array which are less and greater than a specified number.
+
+DESCRIPTION:
+By using array name and a specified number we can extract all numbers from a given array which are less and greater than a specified number. Syntax: array[array>or<number]
+
+PROGRAM:
+Import numpy as np 
+a1=np.array ([1,2,3,2.4,3.7,4,4.5,5] )
+Print(a1)
+Num=1
+Print(“numbers greater than 1”)
+Print(a1[a1>num])
+Num=5
+Print(“numbers less than 5”)
+Print(a1[a1<num])
+
+OUTPUT:
+[1.  2.  3.  2.4 3.7 4.  4.5 5. ]
+Numbers greater than 1
+[2.  3.  2.4 3.7 4.  4.5 5. ]
+Numbers less than 5
+[1.  2.  3.  2.4 3.7 4.  4.5]
+
+Exp no 2.2:
+
+2)b)to find the indices of the maximum and minimum numbers along the given axis of an array.
+
+AIM: to find the indices of the maximum and minimum numbers along the given axis of an array.
+
+DESCRIPTION:
+
+Argmax(): The numpy. Argmax() function returns indices of the max element of the array in a particular axis.     Syntax:Numpy.argmax(array_name)
+Argmin(): The numpy. Argmax() function returns indices of the min element of the array in a particular axis      Syntax:Numpy.argmin(array_name)
+
+PROGRAM:
+import numpy as np    
+arr1=np.array([5,6,2,3,4,1,7,0])
+arr2=np.array([1.2,3.4,4.2,5.6,7.8])
+print(arr1)
+print(arr2)
+print("Maxinum element index:")
+print(np.argmax(arr1))
+print(np.argmax(arr2))
+print("Minimun element index:")
+print(np.argmin(arr1))
+print(np.argmin(arr2))
+
+OUTPUT:
+[5 6 2 3 4 1 7 0]
+[1.2 3.4 4.2 5.6 7.8]
+Maxinum element index:
+6
+4
+Minimun element index:
+7
+0
+
+Exp no 2.3:
+
+2)c)to find the values of the maximum and minimum numbers along the given axis of an array.
+
+AIM: To find the values of the maximum and minimum numbers along the given axis of an array.
+
+DESCRIPTION:
+Max(): Max() function is used to find out the maximum value from the array elements or the elements of the particular array axis.  Syntax:Numpy.min(array_name)
+Min(): Min() function is used to find out the minimum value from the array elements or the particular array axis.    Syntax:Numpy.min(array_name)
+
+PROGRAM:
+importnumpyas np    
+arr1=np.array([5,6,2,3,4,1,7,0])
+arr2=np.array([1.2,3.4,4.2,5.6,7.8])
+print(arr1)
+print(arr2)
+print("Maxinumelemens:")
+print(np.max(arr1))
+print(np.max(arr2))
+print("Minimun elements :")
+print(np.min(arr1))
+print(np.min(arr2))
+
+OUTPUT:
+[5 6 2 3 4 1 7 0]
+[1.2 3.4 4.2 5.6 7.8]
+Maxinumelemens:
+7
+7.8
+Minimun elements :
+0
+1.2
+
+Exp no 2.4:
+
+2)d)find the number of occurances of a sequence in a numpy array.
+
+AIM: Find the number of occurances of a sequence in a numpy array.
+
+DESCRIPTION:
+Count():   Count the number of elements satisfying the condition for each row and column of ndarray. Np. Count_nonzero() for multi-dimensional array counts for each axis (each dimension) by specifying parameter axis . In the case of a two-dimensional array, axis=0 gives the count per column, axis=1 gives the count per row.
+
+PROGRAM:
+import numpy as np
+nums = np.array([1,2,3,4,4,3,2,1,3,2,4,1,2,4,3,1,4,3,2,2,4,3,])
+print(“Original array:”,nums)
+print(np.count_nonzero(nums == 1))
+print(np.count_nonzero(nums == 2))
+print(np.count_nonzero(nums == 3))
+print(np.count_nonzero(nums == 4))
+print(np.count_nonzero(nums==7))
+arr1=[‘pavani’,’deeepika’,’kumari’,’jahnavi’,’ambika’,’sanjana’,’nyshika’,’sireesha’]
+print(arr1)
+print(“count of a”,np.char.count(arr1,’a’,start=0,end=12))
+
+OUTPUT:
+Original array:
+[1 2 3 4 4 3 2 1 3 2 4 1 2 4 3 1 4 3 2 2 4 3]
+4
+6
+6
+6
+0
+[‘pavani’, ‘deeepika’, ‘kumari’, ‘jahnavi’, ‘ambika’, ‘sanjana’, ‘nyshika’, ‘sireesha’]
+Count of a :[2 1 1 2 2 3 1 1]
+
+Exp no 2.5:
+
+2)e) Find the most frequent value in a Numpyarray.
+
+AIM:
+Find the most frequent value in a Numpyarray.
+
+DESCRIPTION:
+bincount ():
+In an array of +ve integers, the numpy.bincount() method counts the occurrence of each element. Each bin value is the occurrence of its index. One can also set the bin size accordingly.
+Syntax:
+Numpy.bincount(arr, weights = None, min_len = 0)
+
+PROGRAM:
+Import numpy as np
+A = np.array([1,2,3,1,2,1,1,3,2,2,1])
+Print(a)
+Counts = np.bincount(a)
+Print(counts)
+Print(“Index of most frequent value”)
+Print(np.argmax(counts))
+Print(“Most frequent value in  the given array”)
+Print(np.max(counts))
+
+OUTPUT:
+[1 2 3 1 2 1 1 3 2 2 1]
+[0 5 4 2]
+Index of most frequent value
+1
+Most frequent valuein the given array
+5
+
+Exp no 2.6:
+
+2)f)How to count the frequency of unique values in NumPy array.
+
+AIM:
+To count the frequency of unique values in NumPy array.
+
+DESCRIPTION:
+Unique():
+The unique() function is used to find the unique elements of an array.Returns the sorted unique elements of an array.
+Syntax:
+Numpy.unique(filt, trim=’fb’)
+Asarray():
+The asarray() function is used to convert an given input to an array.
+Syntax:
+Numpy.asarray(a, dtype=None, order=none)
+
+PROGRAM:
+import numpy as np
+Array = np.array([1,2,3,4,4,3,2,1,3,2,4,1,2,4,3,1,4,3,2,2,4,3,])
+Print(“Original array:”)
+Print(array)
+Unique_elements, counts_elements = np.unique(array, return_counts=True)
+Print(“Frequency of unique values in the given array:”)
+Print(np.asarray((unique_elements, counts_elements)))
+
+OUTPUT:
+Original array:
+[1 2 3 4 4 3 2 1 3 2 4 1 2 4 3 1 4 3 2 2 4 3]
+Frequency of unique values in the given array:
+[[1 2 3 4]
+ [4 6 6 6]]
+
+
+
