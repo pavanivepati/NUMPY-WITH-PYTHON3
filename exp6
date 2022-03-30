@@ -1,0 +1,276 @@
+
+Exp no 6:NUMPY  MATRIX  II
+
+
+6)Using NumPy Matrix – arange, trace/diagonal, add, subtract, dot
+
+Exp no 6.1:
+6)a) To create a 4x4 array, now create a new array from the said array swapping first and last, second and third columns.
+
+AIM:
+To create a 4x4 array, now create a new array from the said array swapping first and last, second and third columns.
+
+DESCRIPTION:
+arange( ):
+NumPy arange() is one of the array creation routines based on numerical ranges. It creates an instance of ndarray with evenly spaced values and returns the reference to it. ... start is the number (integer or decimal) that defines the first value in the array.
+Syntax:
+numpy.arange(start, stop, step, dtype)  
+
+reshape():
+The numpy.reshape() function is available in NumPy package. As the name suggests, reshape means 'changes in shape'. The numpy.reshape() function helps us to get a new shape to an array without changing its data.
+Sometimes, we need to reshape the data from wide to long. So in this situation, we have to reshape the array using reshape() function.
+Syntax
+numpy.reshape(arr, new_shape, order='C')  
+
+PROGRAM:
+
+import numpy as np
+arr1=np.arange(16).reshape(4,4)
+print(arr1)
+print("after swapping of first and last, second and third columns.")
+print(arr1[:,::-1])
+
+OUTPUT:
+
+[[ 0  1  2  3]
+ [ 4  5  6  7]
+ [ 8  9 10 11]
+ [12 13 14 15]]
+after swapping of first and last, second and third columns.
+[[ 3  2  1  0]
+ [ 7  6  5  4]
+ [11 10  9  8]
+ [15 14 13 12]]
+
+
+
+
+
+Exp no 6.2:
+6)b) To swap rows and columns of a given array in reverse order.
+
+AIM:     To swap rows and columns of a given array in reverse order.
+
+DESCRIPTION:
+The slices [1:] and [:-1] mean all but the first and all but the last elements of the array:
+>>> import numpy as np
+>>> s = np.array((1, 2, 2, 3))  # four element array
+>>> s[1:]
+array([2, 2, 3])  # last three elements
+>>> s[:-1]
+array([1, 2, 2])  
+
+PROGRAM:
+import numpy as np
+array=np.array([[[1,2,3,4,5],[6,7,8,9,10],[11,12,13,14,15],[16,17,18,19,20]]])
+print(array)
+print("rows and columns of a given array in reverse order:")
+print(array[::-1,::-1])
+
+OUTPUT: 
+[[[ 1  2  3  4  5]
+  [ 6  7  8  9 10]
+  [11 12 13 14 15]                              
+[16 17 18 19 20]]]
+rows and columns of a given array in reverse order:
+[[[16 17 18 19 20]
+  [11 12 13 14 15]
+  [ 6  7  8  9 10]
+  [ 1  2  3  4  5]]]
+  
+  
+Exp no 6.3:
+6)c) To find the sum of diagonal elements (trace) of matrix
+
+AIM:
+
+To find the sum of diagonal elements (trace) of matrix
+
+DESCRIPTION:
+
+Numpy provides us the facility to compute the sum of different diagonals elements using numpy.trace() and numpy.diagonal() method.
+
+Numpy trace()
+The trace() method returns the sum along diagonals of the array. If the array is 2D, the sum along its diagonal with a given offset is returned, i.e., the sum of items a[i,i+offset] for all i.
+
+Syntax:
+numpy.trace(arr, offset=0, axis1=0, axis2=1, dtype=None, out=None)
+
+Numpy diagonal( ):
+diagonal function in numpy returns upper left o right diagonal elements. If a is 2-D and not a matrix,  a 1-D array of the same type as a containing the diagonal is returned.
+
+Syntax:
+numpy.diagonal(a, offset=0, axis1=0, axis2=1)
+
+
+
+PROGRAM:
+import numpy as np
+arr=np.arange(1,26).reshape(-1,5)
+print(arr)
+print('sum of diagonal elements is:')
+print("method 1:")
+print(np.trace(arr))
+print("method 2:")
+print(np.diagonal(arr).sum())
+
+OUTPUT:
+[[ 1  2  3  4  5]
+ [ 6  7  8  9 10]
+ [11 12 13 14 15]
+ [16 17 18 19 20]
+ [21 22 23 24 25]]
+sum of diagonal elements is:
+method 1:
+65
+method 2:
+65
+
+
+
+
+Exp no 6.4:
+
+6)d) To add Matrices
+
+AIM:
+To add Matrices
+
+DESCRIPTION:
+add() :
+numpy.add() function is used when we want to compute the addition of two array. 
+It add arguments element-wise. If shape of two arrays are not same, that is arr1.
+
+shape != arr2.shape, they must be broadcastable to a common shape (which may be the shape of one or the other).
+
+Syntax:
+numpy.add(arr1, arr2, /, out=None, *, where=True, casting=’same_kind’, order=’K’, dtype=None, subok=True[, signature, extobj], ufunc ‘add’)
+
+
+PROGRAM:
+import numpy as np
+arr1=np.arange(15).reshape(3,5)
+print("Array1:")
+print(arr1)
+arr2=np.arange(12,27).reshape(3,5)
+print("Array2:")
+print(arr2)
+new_arr=np.add(arr1,arr2)
+print("sum of two arrays is:")
+print(new_arr)
+
+
+OUTPUT:
+Array1:
+[[ 0  1  2  3  4]
+ [ 5  6  7  8  9]
+ [10 11 12 13 14]]
+Array2:
+[[12 13 14 15 16]
+ [17 18 19 20 21]
+ [22 23 24 25 26]]
+sum of two arrays is:
+[[12 14 16 18 20]
+ [22 24 26 28 30]
+ [32 34 36 38 40]]
+
+
+
+
+
+
+
+Exp no 6.5:
+
+6)e) To subtract Matrices.
+
+AIM:
+To subtract Matrices.
+
+DESCRIPTION:
+
+subtract():
+
+numpy.subtract() function is used when we want to compute the difference of two array.It returns the difference of arr1 and arr2, element-wise.
+
+Syntax:
+numpy.subtract(arr1, arr2, /, out=None, *, where=True, casting=’same_kind’, order=’K’, dtype=None, subok=True[, signature, extobj], ufunc ‘subtract’)
+
+
+PROGRAM:
+
+import numpy as np
+arr1=np.arange(15).reshape(3,5)
+print("Array1:")
+print(arr1)
+arr2=np.arange(12,27).reshape(3,5)
+print("Array2:")
+print(arr2)
+new_arr=np.subtract(arr2,arr1)
+print("subtraction  of two arrays is:")
+print(new_arr)
+
+OUTPUT:
+
+Array1:
+[[ 0  1  2  3  4]
+ [ 5  6  7  8  9]
+ [10 11 12 13 14]]
+Array2:
+[[12 13 14 15 16]
+ [17 18 19 20 21]
+ [22 23 24 25 26]]
+subtraction  of two arrays is:
+[[12 12 12 12 12]
+ [12 12 12 12 12]
+ [12 12 12 12 12]]
+
+
+
+ Exp no 6.6:
+6)f)To multiply Matrices.
+
+AIM:
+To multiply Matrices.
+
+DESCRIPTION:
+
+dot():
+numpy.dot(vector_a, vector_b, out = None) returns the dot product of vectors a and b. It can handle 2D arrays but considers them as matrix and will perform matrix multiplication. For N dimensions it is a sum-product over the last axis of a and the second-to-last of b :
+
+dot() This function returns the dot product of two arrays. For 2-D vectors, it is the equivalent to matrix multiplication. For 1-D arrays, it is the inner product of the vectors.
+
+syntax:
+numpy.dot(a, b)[i,j,k,m] = sum(a[i,j,:] * b[k,:,m]) 
+
+
+PROGRAM:
+
+import numpy as np
+arr1=np.arange(15).reshape(3,5)
+print("Array1:")
+print(arr1)
+arr2=np.arange(12,27).reshape(5,3)
+print("Array2:")
+print(arr2)
+new_arr=np.dot(arr1,arr2)
+print("multiplication of two arrays is:")
+print(new_arr)
+
+OUTPUT:
+Array1:
+[[ 0  1  2  3  4]
+ [ 5  6  7  8  9]
+ [10 11 12 13 14]]
+Array2:
+[[12 13 14]
+ [15 16 17]
+ [18 19 20]
+ [21 22 23]
+ [24 25 26]]
+multiplication of two arrays is:
+[[ 210  220  230]
+ [ 660  695  730]
+ [1110 1170 1230]]
+
+
