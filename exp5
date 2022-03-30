@@ -1,0 +1,195 @@
+Exp no 5: MATRIX I
+
+5)Write a NumPy program using NumPy Matrix – shape, reshape, identity or eye, ones, zeros, nditer, diag, sum.
+
+Exp no 5.1:
+5)a)To find the number of rows and columns of a given matrix using NumPy
+
+AIM:  
+To find the number of rows and columns of a given matrix using NumPy
+
+DESCRIPTION:
+shape():
+In the NumPy with the help of shape() function, we can find the number of rows and columns. In this function, we pass a matrix and it will return row and column number of the matrix
+Syntax:  nunpy.shape()
+
+PROGRAM:
+import numpy as np
+matrix1=np.matrix([[2,4,6,8],[1,2,3,4,]])
+print(matrix1)
+print(type(matrix1))
+print(“Number of rows and columns”)
+print(np.shape(matrix1))
+
+OUTPUT:
+[[2 4 6 8]
+ [1 2 3 4]]
+<class ‘numpy.matrix’>
+Number of rows and columns
+(2, 4)
+
+
+Exp no 5.2:
+5)b)To display the shape of array and create a new shape to an array without changing its data.
+
+AIM: To display the shape of array and create a new shape to an array without changing its data.
+
+DESCRIPTION:
+Reshape(): The reshape() function is used to give a new shape to an array without changing its data.
+Syntax:numpy.reshape(array, shape, order = ‘C’)
+Shape():   In the NumPy with the help of shape() function, we can find the number of rows and columns. In this function, we pass a matrix and it will return row and column number of the matrix
+Syntax: numpy.shape()
+
+PROGRAM:
+import numpy as np
+arr1=np.array([1,2,3,4,6,7,8,9])
+print(arr1)
+arr2=np.reshape(arr1,(4,2))
+print(arr2)
+arr3=np.reshape(arr2,(2,4))
+print(arr3)
+
+OUTPUT:
+[1 2 3 4 6 7 8 9]
+[[1 2]
+ [3 4]
+ [6 7]
+ [8 9]]
+[[1 2 3 4]
+ [6 7 8 9]]
+ 
+ 
+Exp no 5.3:
+5)c)To create a 3x3 identity matrix using identity and eye. State the difference.
+
+AIM:
+To create a 3x3 identity matrix using identity and eye. State the difference.
+
+DESCRIPTION:
+eye():
+The eye() function is used to create a 2-D array with ones on the diagonal and zeros elsewhere. Number of rows in the output.
+Syntax:
+numpy.eye(N, M=None, k=0, dtype=<class ‘float’>, order=’C’)
+
+identity ():
+Return a identity matrix i.e. a square matrix with ones on the main daignol.
+Syntax:
+numpy.identity(n, dtype = None) 
+
+Difference:
+Finally eye the diagonal can may be offset, whereas identity only fills the main diagonal.
+Since the identity matrix is such a common construct in mathematics, it seems the main advantage of using identity is for its name alone.
+As you say, the main difference is that with eye the diagonal can may be offset, whereas identity only fills the main diagonal.
+Since the identity matrix is such a common construct in mathematics, it seems the main advantage of using identity is for its name alone
+
+
+PROGRAM:
+
+import numpy as np
+arr=np.eye(3,3,dtype=int)
+arr1=np.identity(3,dtype=int)
+print(“eye:”)
+print(arr)
+print(“identity:”)
+print(arr1)
+
+OUTPUT:
+
+eye:
+[[1 0 0]
+ [0 1 0]
+ [0 0 1]]
+identity:
+[[1 0 0]
+ [0 1 0]
+ [0 0 1]]
+
+
+
+
+
+Exp no 5.4:
+5)d)To create a 10x10 matrix, in which the elements on the borders will be equal to 1, and inside 0.
+
+AIM:
+To create a 10x10 matrix, in which the elements on the borders will be equal to 1, and inside 0.
+
+DESCRIPTION:
+Ones():
+Python numpy. Ones() function returns a new array of given shape and data type, where the element’s value is set to 1. This function is very similar to numpy zeros() function.
+Syntax:   numpy.ones(shape, dtype = None, order = ‘C’) 
+
+PROGRAM:
+import numpy as  np
+arr=np.ones((10,10))
+arr[1:-1,1:-1]=0
+print(arr)
+
+OUTPUT:
+[[1. 1. 1. 1. 1. 1. 1. 1. 1. 1.]
+ [1. 0. 0. 0. 0. 0. 0. 0. 0. 1.]
+ [1. 0. 0. 0. 0. 0. 0. 0. 0. 1.]
+ [1. 0. 0. 0. 0. 0. 0. 0. 0. 1.]
+ [1. 0. 0. 0. 0. 0. 0. 0. 0. 1.]
+ [1. 0. 0. 0. 0. 0. 0. 0. 0. 1.]
+ [1. 0. 0. 0. 0. 0. 0. 0. 0. 1.]
+ [1. 0. 0. 0. 0. 0. 0. 0. 0. 1.]
+ [1. 0. 0. 0. 0. 0. 0. 0. 0. 1.]
+ [1. 1. 1. 1. 1. 1. 1. 1. 1. 1.]]
+ 
+ 
+ 
+Exp no 5.5:
+5)e)To create a 5x5 zero matrix with elements on the main diagonal equal to 1, 2, 3, 4, 5.
+
+AIM:
+To create a 5x5 zero matrix with elements on the main diagonal equal to 1, 2, 3, 4, 5.
+
+DESCRIPTION:
+diag():
+The diag() function is used to extract a diagonal or construct a diagonal array. If v is a 2-D array, return a copy of its k-th diagonal. … Use k>0 for diagonals above the main diagonal, and k<0 for diagonals below the main diagonal.
+Syntax:
+numpy.diag(a, k=0) 
+
+PROGRAM:
+import numpy as np
+print(“5x5 zero matrix with elements on the main diagonal equal to 1, 2, 3, 4, 5.”)
+print(np.diag([1,2,3,4,5]))
+
+OUTPUT:
+5x5 zero matrix with elements on the main diagonal equal to 1, 2, 3, 4, 5.
+[[1 0 0 0 0]
+ [0 2 0 0 0]
+ [0 0 3 0 0]
+ [0 0 0 4 0]
+ [0 0 0 0 5]]
+ 
+ 
+Exp no 5.6:
+5)f)To compute sum of all elements, sum of each column and sum of each row of a given array.
+
+AIM:
+To compute sum of all elements, sum of each column and sum of each row of a given array.
+
+DESCRIPTION:
+sum():
+This function returns the sum of array elements over the specified axis.Thenumpy.sum() function is available in the NumPy package of Python. This function is used to compute the sum of all elements, the sum of each row, and the sum of each column of a given array.yntax:
+numpy.sum(arr, axis, dtype, out) 
+
+PROGRAM:
+import numpy as np
+arr1=np.array([[1,2,3,4],[6,7,8,9]])
+print(arr1)
+print(“sum is:”)
+print(np.sum(arr1))
+print(np.sum(arr1,axis=0))
+print(np.sum(arr1,axis=1))
+
+OUTPUT:
+[[1 2 3 4]
+ [6 7 8 9]]
+Sum is:
+40
+[ 7  9 11 13]
+[10 30]
+
