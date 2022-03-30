@@ -1,0 +1,212 @@
+Exp no 12:     NUMPY STRING
+
+                                            
+12)Write a NumPy program using Strings – capitalize, lower, upper, swapcase, title, strip, replace, count, find, vectorize, split
+
+Exp no 12.1:
+a)To capitalize the first letter, lowercase, uppercase, swapcase, title-case of all the elements of a given array.
+
+AIM:
+Numpy program to capitalize the first letter, lowercase, uppercase, swapcase, title-case of all the elements of a given array.
+
+DESCRIPTION:
+Captialize:
+numpy.char.capitalize()
+It converts the first character of a string to capital (uppercase) letter. If the string has its first character as capital, then it returns the original string.
+Lower:
+numpy.char.lower()
+lower() : This function returns the lowercase string from the given string. It converts all uppercase characters to lowercase. If no uppercase characters exist, it returns the original string.
+Upper:
+numpy.char.upper()
+ upper() function returns an array with the elements converted to uppercase. Call str. upper element-wise. For 8-bit strings, this method is locale-dependent.
+Swapcase:
+numpy.char.swapcase()
+The swapcase() function is mainly used to return an element-wise copy of the string with the uppercase characters of the string converted to lowercase and lowercase characters converted to uppercase. In short, it swaps or changes the case of the characters in a given string.
+Title:
+numpy.char.title()
+title(arr) : function is used to Return element-wise title cased version of string or unicode. Title case words start with uppercase characters, all remaining cased characters are lowercase.
+
+
+PROGRAM: 
+import numpy as np
+arr=np.array(["PYTHON","c","c++","java","SQL"])
+print(arr)
+print("capitalized array:",np.char.capitalize(arr))
+print("lower cased array:",np.char.lower(arr))
+print("upper cased array:",np.char.upper(arr))
+print("swap cased array:",np.char.swapcase(arr))
+print("title cased array:",np.char.title(arr))
+
+
+OUTPUT:
+['PYTHON' 'c' 'c++' 'java' 'SQL']
+capitalized array: ['PYTHON' 'c' 'c++' 'java' 'SQL']
+capitalized array: ['Python' 'C' 'C++' 'Java' 'Sql']
+lower cased array: ['python' 'c' 'c++' 'java' 'sql']
+upper cased array: ['PYTHON' 'C' 'C++' 'JAVA' 'SQL']
+swap cased array: ['python' 'C' 'C++' 'JAVA' 'sql']
+title cased array: ['Python' 'C' 'C++' 'Java' 'Sql']
+['Python' 'C' 'C++' 'Java' 'Sql']
+lower cased array: ['python' 'c' 'c++' 'java' 'sql']
+upper cased array: ['PYTHON' 'C' 'C++' 'JAVA' 'SQL']
+swap cased array: ['python' 'C' 'C++' 'JAVA' 'sql']
+title cased array: ['Python' 'C' 'C++' 'Java' 'Sql']
+
+Exp no 12.2:
+b)To remove the leading and trailing whitespaces of all the elements of a given array.
+
+AIM:
+Numpy program to remove the leading and trailing whitespaces of all the elements of a given array.
+
+DESCRIPTION:
+Numpy.core.defchararray.lstrip(arr, chars=None) is another function for doing string operations in numpy. It returns a copy with the leading characters removed for each element in arr.
+Parameters:
+arr : array_like of str or unicode.
+char : [str or unicode, optional] the set of characters to be removed. If omitted or None, it removes whitespace. The chars argument is not a prefix or suffix; it is all combinations of its values which we want to strip.
+Returns : [ndarray] Output array of str or unicode, depending on input type.
+numpy.core.defchararray.rstrip(arr, chars=None) is another function for doing string operations in numpy. It returns a copy with the trailing characters removed for each element in arr.
+Returns : [ndarray] Output array of str or unicode, depending on input type.
+
+PROGRAM:
+import numpy as np
+arr=np.array([" PYTHON "," c "," c++ "," java "," SQL "])
+print(arr)
+print("after removal of leading whitespaces:",np.char.lstrip(arr))
+print("after removal of trailing whitespaces:",np.char.rstrip(arr))
+
+OUTPUT:
+[' PYTHON ' ' c ' ' c++ ' ' java ' ' SQL ']
+after removal of leading whitespaces: ['PYTHON ' 'c ' 'c++ ' 'java ' 'SQL ']
+after removal of trailing whitespaces: [' PYTHON' ' c' ' c++' ' java' ' SQL']
+
+
+Exp no 12.3:
+C)To replace "PHP" with "Python" in the element of a given array.
+
+AIM:
+Numpy program to replace "PHP" with "Python" in the element of a given array.
+
+DESCRIPTION:
+The replace() function is used to return a copy of the array of strings or the string, with all occurrences of the old substring replaced by the new substring. This function is very useful if you want to do some changes in the array elements, where you want to replace a substring with some new string value.
+SYNTAX:
+The syntax required to use this function is as follows:
+    numpy.char.replace(a, old, new, count=None)
+
+PROGRAM:
+import numpy as np
+arr=np.array(["PHP","PHP","java","SQL"])
+print(arr)
+print("after replacing php with python:",np.char.replace(arr,"PHP","PYTHON"))
+
+OUTPUT:
+['PHP' 'PHP' 'java' 'SQL']
+after replacing php with python: ['PYTHON' 'PYTHON' 'java' 'SQL']
+
+
+
+Exp no 12.4:
+d) To count the number of "P" and lowest index of “P” in a given array, element-wise.
+
+AIM:
+Numpy program to count the number of "P" and lowest index of “P” in a given array, element-wise.
+
+DESCRIPTION:
+Count():
+Counts for the non-overlapping occurrence of sub-string in the specified range.
+Parameters:
+Arr : array-like or string to be searched.
+Substring : substring to search for.
+Start, end : [int, optional] Range to search in.
+Returns : 
+An integer array with the number of non-overlapping occurrences of sub-string.
+SYNTAX:
+numpy.char.count(a, sub, start, end=None)
+
+PROGRAM:
+import numpy as np
+arr=np.array(["PHP","PHP","java","SQL","examples"])
+print(arr)
+print("index positions of p:",np.char.count(arr,"p"))
+
+OUTPUT:
+['PHP' 'PHP' 'java' 'SQL' 'examples']
+index positions of p: [0 0 0 0 1]
+
+
+Exp no 12.5:
+e) To find the length of each string element in the Numpy array.
+
+AIM: Numpy program to  find the length of each string element in the Numpy array.
+
+DESCRIPTION:
+Define a vectorized function which takes a nested sequence of objects or numpy arrays as inputs and returns a single numpy array or a tuple of numpy arrays. The vectorized function evaluates pyfunc over successive tuples of the input arrays like the python map function, except it uses the broadcasting rules of numpy.
+
+PROGRAM:
+import numpy as np
+arr=np.array(["sandy","chandu","rani","jhansi"])
+print(arr)
+print("length of each string:")
+print("method 1:")
+length=np.vectorize(len)
+arr_len=length(arr)
+print(arr_len)
+print("method 2:")
+res=[len(i) for i in arr]
+print(res)
+
+OUTPUT:
+['sandy' 'chandu' 'rani' 'jhansi']
+length of each string:
+method 1:
+[5 6 4 6]
+method 2:
+[5, 6, 4, 6]
+
+
+Exp no 12.6:
+f) To split a given text into lines and split the single line into array values.
+
+AIM:
+Numpy program to split a given text into lines and split the single line into array values.
+
+DESCRIPTION:
+In this numpy.core.defchararray.splitlines() function, each element in arr, return a list of the lines in the element, breaking at line boundaries.
+
+Parameters:
+arr -array-like of str]  Given array-like of string.
+
+keepends : [bool, optional] Line breaks are not included in the resulting list unless keepends is given and true.
+Syntax:
+numpy.core.defchararray.splitlines(arr, keepends = None)
+
+PROGRAM:
+
+import numpy as np
+arr='''1 a pavani
+2 b jahnavi
+3 c sanjana
+4 d ambika
+5 e nyshika
+6 f sireesha'''
+print(arr)
+text_lines=arr.splitlines()
+text_lines=[r.split("\t")for r in text_lines]
+res=np.array(text_lines)
+print("given text as array:",res)
+
+OUTPUT:
+
+1 a pavani
+2 b jahnavi
+3 c sanjana
+4 d ambika
+5 e nyshika
+6 f sireesha
+given text as array:
+ [['1 a pavani']
+ ['2 b jahnavi']
+ ['3 c sanjana']
+ ['4 d ambika']
+ ['5 e nyshika']
+ ['6 f sireesha']]
+
